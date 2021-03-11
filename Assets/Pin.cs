@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pin : MonoBehaviour
 {
+    public static int check = 0;
+    SpriteRenderer sprite;
+
     private bool isPinned = false;
 
     public float speed = 20f;
@@ -11,8 +14,9 @@ public class Pin : MonoBehaviour
 
     private void Start()
     {
-        
-            Time.timeScale = 1.0f;
+        sprite = GetComponent<SpriteRenderer>();
+
+        Time.timeScale = 1.0f;
         
     }
     void FixedUpdate()
@@ -31,8 +35,11 @@ public class Pin : MonoBehaviour
         }
         else if(col.tag == "Pin")
         {
+            sprite.color = new Color(1, 0, 0, 1);
+
             FindObjectOfType<GameManager>().EndGame();
             Debug.Log("End Game");
+            check = 1;
         }
     }
 }

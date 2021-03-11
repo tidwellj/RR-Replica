@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             else if(lives == 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            lives = 0;
+            lives = 3;
             }
 
 

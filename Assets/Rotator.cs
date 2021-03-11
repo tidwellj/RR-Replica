@@ -9,7 +9,7 @@ public class Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(speed + RotatorSpeed.rotatorSpeed);
+     //   Debug.Log(speed + RotatorSpeed.rotatorSpeed);
        
         transform.Rotate(0f, 0f, (speed + RotatorSpeed.rotatorSpeed) * Time.deltaTime);
     }
