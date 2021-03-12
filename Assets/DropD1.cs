@@ -21,6 +21,6 @@ public class DropD1 : MonoBehaviour
         m_DropdownValue = m_Dropdown.value;
         lives1 = m_Dropdown.options[m_DropdownValue].text;
         lives = int.Parse(lives1);
-        
+
     }
 }

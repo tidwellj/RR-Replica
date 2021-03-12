@@ -10,20 +10,22 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public Animator animator;
     public static int lives = DropD1.lives - 1;
+
+
     public void Update()
     {
-       
+
     }
     public void EndGame()
     {
-        if(gameHasEnded)
+        if (gameHasEnded)
             return;
 
         rotator.enabled = false;
         spawner.enabled = false;
         animator.SetTrigger("EndGame");
-            gameHasEnded = true;
-        
+        gameHasEnded = true;
+
 
     }
 
@@ -31,21 +33,34 @@ public class GameManager : MonoBehaviour
     {
 
 
-        Debug.Log(lives);
+
+
+
+
+
 
         if (lives > 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             lives--;
-            }
-            else if(lives == 0)
+
+        }
+        else if (lives == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            if (SaveBinary.loaded == 1)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            lives = 3;
+                lives = SaveBinary.newLives;
             }
+            else
+            {
+                lives = DropD1.lives - 1;
+            }
+        }
 
 
-        
+
 
     }
 }

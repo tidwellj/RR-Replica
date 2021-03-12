@@ -10,11 +10,11 @@ public class PlayAgain : MonoBehaviour
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        DropD1.lives = DropD1.lives;
+        //DropD1.lives = DropD1.lives;
         //Score.CurrentScore = 0;
         TimeLimit.timeLeft = 30f;
     }
-    
+
 
 
 }
